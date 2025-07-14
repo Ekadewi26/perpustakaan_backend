@@ -10,7 +10,7 @@ use Carbon\Carbon;
 class LoanController extends Controller
 {
     // ✅ Untuk admin: tampilkan semua peminjaman
-    public function index()
+   public function index()
     {
         $loans = Loan::with('book', 'user')->get();
 
@@ -52,7 +52,7 @@ class LoanController extends Controller
     }
 
     // ✅ Daftar buku yang sedang dipinjam
-    public function borrowed()
+public function borrowed()
     {
         $pinjaman = Loan::with('book', 'user')
             ->whereNull('tanggal_kembali')
