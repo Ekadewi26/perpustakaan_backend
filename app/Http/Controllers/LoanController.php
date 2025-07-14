@@ -10,8 +10,7 @@ use Carbon\Carbon;
 class LoanController extends Controller
 {
     // ✅ Untuk admin: tampilkan semua peminjaman
-   public function index()
-    {
+  {
         $loans = Loan::with('book', 'user')->get();
 
         $formatted = $loans->map(function ($loan) {
